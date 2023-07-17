@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="style.css">
 
 	<!--------------------------------->
-	<title>Web Teknoloji Projesi</title>
+	<title>Web_Teknolojileri</title>
 
 </head>
 
@@ -33,10 +33,7 @@
 
 		<div class="container">
 		
-			<a href="anasayfa.html" class="navbar-brand text-white">
-	  		  <i class="fas fa-grin-wink"></i>
-	  		   Ekrem
-	      	</a>
+			
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
 				<span class="navbar-toggler-icon"><i class="fas fa-ellipsis-v"></i></span>
@@ -47,7 +44,7 @@
 
 					<li class="nav-item">
 						<a href="anasayfa.html" class="nav-link active  text-white">
-	      				Anasayfa
+	      				Hakkımda
 	      				</a></li>
 
 					<li class="nav-item">
@@ -56,8 +53,8 @@
 	      				</a></li>
 
 	      			<li class="nav-item">
-						<a href="yalovam.html" class="nav-link active  text-white">
-	      				Yalovam
+						<a href="sehrim.html" class="nav-link active  text-white">
+	      				Şehrim
 	      				</a></li>	
 
 					<li class="nav-item">
@@ -72,7 +69,7 @@
 
 	      			<li class="nav-item">
 						<a href="login.php" class="nav-link active  text-white">
-	      				<i class="fas fa-sign-in-alt"></i>
+	      				Log-In
 	      				</a></li>					
 				</ul>
 			</div>
@@ -82,12 +79,12 @@
 
 	<header>
 
-		<div class="bg-info text-light jumbotron balikcilar-jumbotron">
+		<div class="bg-info text-light jumbotron hosgeldiniz-jumbotron">
 
 			<div class="container">
 
 				<div class="col-md-6 px-0">
-					<h1 class="display-4 font-italic">
+					<h1 class="display-4 ">
 						Giriş Ekranı
 					</h1>
 				</div>
@@ -126,7 +123,7 @@
 
 
 	<footer class="py-5 bg-info text-white text-center">
-		Web-Teknolojileri-Projesi © Ekrem Eren Yılmaz 2020
+		Web_Teknolojileri_Projesi © 2023
 	</footer>
 
 	<!-- BOOTSTRAP -->

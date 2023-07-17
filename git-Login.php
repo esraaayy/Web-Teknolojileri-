@@ -79,7 +79,7 @@
 
 	<header>
 
-		<div class="bg-info text-light jumbotron balikcilar-jumbotron">
+		<div class="bg-info text-light jumbotron hosgeldiniz-jumbotron">
 
 			<div class="container">
 
