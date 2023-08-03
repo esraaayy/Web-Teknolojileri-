@@ -69,7 +69,7 @@
 	      			<li class="nav-item">
 						<a href="ilgialanlarim.html" class="nav-link active  text-white">
 	      				İlgi Alanlarım
-	      				</a></li>
+	      				</a></li>						
 	      			<li class="nav-item">
 						<a href="login.html" class="nav-link active  text-white">
 						Log-In
@@ -90,18 +90,9 @@
 
 				<div class="col-md-6 px-0">
 					<h1 class="display-4 ">
-						Hakkımda 
+						 Sevdiğim Filmler 
 					</h1>
-					<p class="lead my-3">
-
-						Merhaba, Ben Esra Yılmaz. 1999 İstanbul doğumluyum. 24 yaşındayım. <a href="https://cs.sakarya.edu.tr/">Sakarya Üniversitesi'nde Bilgisayar Mühendisliği bölümünde<a/> öğrenciyim. 
-					</p>
-					<style>
-						a{
-							color:navy;
-						}
-					</style>
-							
+					
 				</div>
 
 			</div>
@@ -113,56 +104,46 @@
 	<main>
 
 		<div class="container">
-			<div class="row"><img class='hakkimda_me' src="img/me.jpg">
-			<style>
-				.hakkimda_me{
-					width: 300px;
-					height: auto; 
-					display: block; 
-					margin: 0;
-					float: left;
-				}
-			</style>
+			<div>
+				<p> MOVIES</P>
+				<div id="filmListesi" class="row">
+				<!-- Burada API'den gelecek film verileri listelenecek -->
 			</div>
-			<div class="row">
-	
 			
-			
-			
-				
-			
-			<br><br>
-
-			<p>
-			
-				Hatırladığım en eski  anılarım İstanbul'un Pendik ilçesinde geçen çocukluk dönemlerime ait. Çok hareketli ve yaramaz bir çocuk olduğum söylenir. Favori oyuncağım legolarımmış hala bile yapbozlarla uğraşmayı çok severim. İlk okul, orta okul dönemelrinde oldukça başarılı bir öğrencilik hayatım var. Bu dönemlerimde oldukça sosyal bir çocuk ve mahallenin ablası olarak çocuklara öğretmenlik yapıp kurs vermişliğim bile var. Demem o ki her yaşımın hakkını vererek dolu dolu ve eğlenceli vakit geçirdim.
-			</p>
-
-
-			<p>
-				Kendi kendime karalama yapmak,  basketbol ve voleybol maçları izlemekten çok keyif alırım. Lisede çizdiğim yaklaşık altı tane karikatür defterim ve evde beş tane farklı tekniklerle boyanmış tablom var. Favorim karakalem ve toz pastel. Lisede metalci olsam da şu an her telden müzik dinlemeyi severim. <a href="https://tr.wikipedia.org/wiki/Cem_Karaca">Cem Karaca</a> hayranıyım. 90 lar pop müziğine de bayılıyorum. 
-			</p><br>
-
-			<p>
-				Bilgisayar mühendisliğine lisede matematik hocamın, matematiğin bilgisayarlarda nasıl kullanıldığıyla ilgili verdiği örnekler sayesinde ilgi duymaya başladım. Sonrasında yolum Sakarya Üniversitesine çıktı. Başlarda yazılımdan ilerlemeyi çok istiyordum. 3. sınıftayken SAITEM öğrenci topluluğuna otonom araç için katıldım. Fakat yapay zekanın yanında siber güvenliğe ilgi duymaya başladım. Bu yüzden SAITEM den ayrılıp fakültemizde bulunan <a href="https://center.sakarya.edu.tr/">Kritik altyapılar test yatağı merkezinde</a> staj yapmaya başladım. Oradaki mentör hocam Musa Baltanın yönlendirmesi ile daha sonra sistem zafiyetleri, topoloji oluşturma, ıds sistemi tasarımı gibi projelere katıldım.
-			</p>
-			<style>
-				a{
-					color:navy;
-				}
-			</style>
-			<br>
-
-			<p>
-				 Şuan makine öğrenmesi tabanlı bir ıds sistemi üzerine olanbir TUBITAK 2209 projesinde çalışıyorum. Ve Turkcell de stajyer olarak network eğitimi alıyorum.
-			</p>
-
-
-			</div>
-
 		</div>
 
 	</main>
+	
+	<!--JAVASCRIPT-->
+	<script>
+		const apiKey = '7bc7e6173abc8625838e225784782a3f';
+		const baseUrl = 'https://api.themoviedb.org/3';
+		const favoriteMovies = [454227, 1023, 281957,619264,335787,499932,423];
+
+		const filmListesiDiv = document.getElementById('filmListesi');
+
+		
+		favoriteMovies.forEach(movieId => {
+			const apiUrl = `${baseUrl}/movie/${movieId}?api_key=${apiKey}`;
+			fetch(apiUrl)
+				.then(response => response.json())
+				.then(data => {
+					const filmDiv = document.createElement('div');
+					filmDiv.className = 'col-md-4 mb-4';
+					filmDiv.innerHTML = `
+						<div class="card">
+							<img src="https://image.tmdb.org/t/p/w500${data.poster_path}" class="card-img-top" alt="${data.title}">
+							<div class="card-body">
+								<h5 class="card-title">${data.title}</h5>
+								<p class="card-text">${data.overview}</p>
+							</div>
+						</div>
+				`	;
+					filmListesiDiv.appendChild(filmDiv);
+				})
+				.catch(error => console.error('Hata:', error));
+		});
+	</script>
 
 	<footer class="py-5 bg-info text-white text-center">
 		Web_Teknolojileri_Projesi © 2023

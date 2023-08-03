@@ -67,7 +67,10 @@
 						<a href="iletisim.html" class="nav-link active  text-white">
 	      				İletişim
 	      				</a></li>
-
+	      			<li class="nav-item">
+						<a href="ilgialanlarim.html" class="nav-link active  text-white">
+	      				İlgi Alanlarım
+	      				</a></li>
 	      			<li class="nav-item">
 						<a href="login.html" class="nav-link active  text-white">
 	      				Log-In
